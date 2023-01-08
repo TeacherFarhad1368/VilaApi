@@ -1,0 +1,77 @@
+﻿@model Vila.Web.Models.Vila.VilaModel
+
+@{
+    ViewData["Title"] = "AddVila";
+}
+
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<h1>افزودن ویلای جدید</h1>
+
+<div class="row">
+    <div class="col-md-6 pr-5 mr-5">
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Image" value="@null" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="address" class="control-label"></label>
+                <input asp-for="address" class="form-control" />
+                <span asp-validation-for="address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mobile" class="control-label"></label>
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DayPrice" class="control-label"></label>
+                <input asp-for="DayPrice" class="form-control" />
+                <span asp-validation-for="DayPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SellPrice" class="control-label"></label>
+                <input asp-for="SellPrice" class="form-control" />
+                <span asp-validation-for="SellPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuildDate" class="control-label"></label>
+                <input asp-for="BuildDate" class="form-control" />
+                <span asp-validation-for="BuildDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">تصویر</label>
+                <input name="picture" type="file" accept=".jpg" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="افزودن" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

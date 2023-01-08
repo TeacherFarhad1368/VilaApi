@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Selling</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Content/css/jquery-ui.css">
+    <link rel="stylesheet" href="/Content/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Content/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/Content/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="/Content/css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="/Content/css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="/Content/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="/Content/css/aos.css">
+
+    <link rel="stylesheet" href="/Content/css/style.css">
+    <link rel="stylesheet" href="/Content/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+<div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <div class="top-bar py-3 bg-light" id="home-section">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-6 text-left">
+                    <ul class="social-media">
+                        <li><a href="#" class=""><span class="icon-facebook"></span></a></li>
+                        <li><a href="#" class=""><span class="icon-twitter"></span></a></li>
+                        <li><a href="#" class=""><span class="icon-instagram"></span></a></li>
+                        <li><a href="#" class=""><span class="icon-linkedin"></span></a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    
+                              <p class="mb-0 float-right">
+                     ویلا
+                    </p>
+                      
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target" role="banner">
+
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-6 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black mb-0">Selling<span
+                            class="text-primary">.</span> </a></h1>
+                </div>
+                <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+
+                        <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                            <li><a asp-controller="Home" asp-action="Index" class="nav-link">خانه</a></li>
+                            <li><a href="#products-section" class="nav-link">محصولات</a></li>
+                            <li><a href="#about-section" class="nav-link">درباره ما</a></li>
+                            <li><a href="#special-section" class="nav-link">فروش ویژه</a></li>
+                            @if (User.IsInRole("admin"))
+                                {
+                                     <li><a asp-controller="Admin" asp-action="AllVilas" class="nav-link">ادمین</a></li>
+                                }
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li><a asp-controller="Auth" asp-action="Logout" class="nav-link">خروج از سایت</a></li>
+                                }
+                                else
+                                {
+                                    <li><a asp-controller="Auth" asp-action="Login" class="nav-link">ورود به سایت</a></li>
+                            <li><a  asp-controller="Auth" asp-action="Register" class="nav-link">ثبت نام</a></li>
+                                }
+                                
+                                   
+                        </ul>
+                    </nav>
+                </div>
+
+
+                <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a
+                        href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span
+                        class="icon-menu h3"></span></a></div>
+
+            </div>
+        </div>
+
+    </header>
+
+    @RenderBody()
+
+
+
+</div> <!-- .site-wrap -->
+
+<script src="/Content/js/jquery-3.3.1.min.js"></script>
+<script src="/Content/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/Content/js/jquery-ui.js"></script>
+<script src="/Content/js/popper.min.js"></script>
+<script src="/Content/js/bootstrap.min.js"></script>
+<script src="/Content/js/owl.carousel.min.js"></script>
+<script src="/Content/js/jquery.stellar.min.js"></script>
+<script src="/Content/js/jquery.countdown.min.js"></script>
+<script src="/Content/js/bootstrap-datepicker.min.js"></script>
+<script src="/Content/js/jquery.easing.1.3.js"></script>
+<script src="/Content/js/aos.js"></script>
+<script src="/Content/js/jquery.fancybox.min.js"></script>
+<script src="/Content/js/jquery.sticky.js"></script>
+
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="/Content/js/main.js"></script>
+<script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
+@RenderSection("Scripts",false)
+</body>
+</html>

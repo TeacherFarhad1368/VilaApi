@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vila.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Vila.WebApi.Controllers.CustomerController.Register(Vila.WebApi.CustomerModels.RegisterModel)">
+            <summary>
+            ثبت نام
+            </summary>
+            <param name="model"> موبایل و کلمه عبور</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vila.WebApi.Controllers.CustomerController.Login(Vila.WebApi.CustomerModels.RegisterModel)">
+            <summary>
+            ورود به سایت
+            </summary>
+            <param name="login"> موبایل و کلمه عبور</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vila.WebApi.Controllers.DetailController.GetAllVilaDetails(System.Int32)">
+            <summary>
+            دریافت تمام جزییات یک ویلا
+            </summary>
+            <param name="vilaId">کلید ویلا</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vila.WebApi.Controllers.DetailController.GetById(System.Int32)">
+            <summary>
+            دریافت یک جز ویلا
+            </summary>
+            <param name="detailId">ای دی جز </param>
+            <returns></returns>
+        </member>
+        <member name="M:Vila.WebApi.Controllers.DetailController.Create(Vila.WebApi.Dtos.DetailDto)">
+            <summary>
+            افزودن جزییات به ویلا
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vila.WebApi.Controllers.DetailController.Update(System.Int32,Vila.WebApi.Dtos.DetailDto)">
+            <summary>
+            ویرایش جزییات ویلا
+            </summary>
+            <param name="detailId">کلید جز</param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vila.WebApi.Controllers.DetailController.Remove(System.Int32)">
+            <summary>
+            حذف جز ویلا
+            </summary>
+            <param name="detailId">کلید جز</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vila.WebApi.Controllers.VilaController.GetAll">
+            <summary>
+            دریافت لیست تمام ویلا ها
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vila.WebApi.Controllers.VilaController.GetDetails(System.Int32)">
+            <summary>
+            دریافت یک ویلا به آی دی ویلا
+            </summary>
+            <param name="vilaId">آی دی ویلا</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vila.WebApi.Controllers.VilaController.Create(Vila.WebApi.Dtos.VilaDto)">
+            <summary>
+            ایجاد یک ویلای جدید 
+            </summary>
+            <param name="model"> اطلاعات ویلا (VilaDto)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vila.WebApi.Controllers.VilaController.Update(System.Int32,Vila.WebApi.Dtos.VilaDto)">
+            <summary>
+            ویرایش ویلا
+            </summary>
+            <param name="vilaId">آی دی ویلا</param>
+            <param name="model"> اطلاعات ویلا (VilaDto)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vila.WebApi.Controllers.VilaController.Remove(System.Int32)">
+            <summary>
+            حذف ویلا
+            </summary>
+            <param name="vilaId">کلید ویلا</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vila.WebApi.Controllers.VilaV2Controller.Search(System.Int32,System.String,System.Int32)">
+            <summary>
+            جست وجوی ویلا
+            </summary>
+            <param name="pageId">صفحه چندم ؟</param>
+            <param name="filter">متن جست وجو</param>
+            <param name="take">تعداد نمایش</param>
+            <returns></returns>
+        </member>
+        <member name="P:Vila.WebApi.Dtos.LoginResultDto.JwtSecret">
+            <summary>
+            توکن احراز هویت bearer
+            </summary>
+        </member>
+        <member name="P:Vila.WebApi.Dtos.VilaDto.DayPrice">
+            <summary>
+            قیمت کرایه یک روز ویلا (تومان)
+            </summary>
+        </member>
+        <member name="P:Vila.WebApi.Dtos.VilaDto.SellPrice">
+            <summary>
+            قیمت فروش ویلا (تومان)
+            </summary>
+        </member>
+        <member name="P:Vila.WebApi.Dtos.VilaDto.BuildDate">
+            <summary>
+            تاریخ ساخت ویلا (روز و ماه باید 2 رقمی باشد 1379/05/01)
+            </summary>
+        </member>
+    </members>
+</doc>

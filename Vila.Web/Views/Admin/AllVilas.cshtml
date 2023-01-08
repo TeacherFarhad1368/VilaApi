@@ -1,0 +1,59 @@
+﻿@model List<Vila.Web.Models.Vila.VilaModel>
+@{
+    ViewData["Title"] = "Home Page";
+    var success = TempData["success"] != null;
+}
+<hr />
+<hr />
+    <div class="site-section" id="products-section">
+        <div class="container">
+            <a asp-action="AddVila" class="btn btn-success">ویلای جدید</a>
+            @if(success)
+            {
+            <hr />
+            <h3 class="alert alert-success">
+                عملیات موفق !!!
+                </h3>
+        }
+            <hr />
+           <table class="table table-bordered" id="myTable">
+               <thead>
+                   <tr>
+                       <td>شماره</td>
+                       <td>تصویر</td>
+                       <td>نام ویلا</td>
+                       <td>شهرستان</td>
+                       <td></td>
+                   </tr>
+               </thead>
+               <tbody>
+                   @foreach(var item in Model)
+                {
+                     <tr>
+                         <td>@item.VilaId</td>
+                         <td>
+                            @{
+                                var image = Convert.ToBase64String(item.Image);
+                                var src = string.Format("data:image/jpg;base64,{0}", image);
+                            }
+                            <img class="img-thumbnail" style="width:120px" src="@src" />
+                         </td>
+                         <td>
+                             @item.Name
+                         </td>
+                         <td>
+                             @item.State @item.City
+                         </td>
+                         <td>
+                             <a asp-action="EditVila" asp-route-id="@item.VilaId" class="btn btn-warning">ویرایش</a>
+                             <a asp-action="DeleteVila" asp-route-id="@item.VilaId" class="btn btn-danger">حذف</a>
+                             <a asp-action="GetVilaDetails" asp-route-id="@item.VilaId" class="btn btn-info">جزییات</a>
+                         </td>
+                   </tr>
+                }
+               
+               </tbody>
+
+           </table>
+        </div>
+    </div>

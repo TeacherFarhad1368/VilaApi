@@ -1,0 +1,61 @@
+﻿@model Vila.Web.Models.Customer.RegisterModel
+
+@{
+    ViewData["Title"] = "ثبت نام در سایت";
+    var success = TempData["success"] != null;
+}
+ <div class="site-section bg-light" id="contact-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h3></h3>
+                    <h2 class="section-title mb-3">ثبت نام در سایت</h2>
+                    @if(success)
+                {
+                 <h2 class="alert alert-success">
+                     ثبت نام با موفقیت انجام شد .
+            </h2>
+                }
+            </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-7 mb-5">
+
+
+                    <form method="post" class="p-5 bg-white">
+
+                        <h2 class="h4 text-black mb-5">فرم ثبت نام</h2>
+                        <div class="text-danger" asp-validation-summary=All></div>
+
+                        <div class="row form-group">
+
+                            <div class="col-md-12">
+                                <label class="text-black" asp-for="Mobile"></label>
+                                <input type="text" asp-for="Mobile" class="form-control rounded-0">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+
+                            <div class="col-md-12">
+                                 <label class="text-black" asp-for="Pass"></label>
+                                <input type="password" asp-for="Pass" class="form-control rounded-0">
+                            </div>
+                        </div>
+
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <input type="submit" value="ارسال" class="btn btn-black rounded-0 py-3 px-4">
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>    
